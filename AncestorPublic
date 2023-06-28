@@ -20,7 +20,6 @@ local Maid, Ancestor, GUISettings, Connections = loadstring(game:HttpGetAsync('h
     Sprinting                    = false,
     ModerationType               = 'Vehicle',
     ModerationAction             = 'Kill',
-    LatestSupportedVersion       = '2258',
     InventoryDuplicationAmount   = 1,
     PropertyToDuplicate          = 1,
     PlayerToDuplicatePropertyTo  = game.Players:GetPlayers()[1],
@@ -148,12 +147,6 @@ getgenv().LoadedTrees = {
     Tree.Parent = (GUISettings.TreesEnabled and Tree.Parent) or Lighting
     
 end}
-
-if Ancestor.LatestSupportedVersion ~= tostring(game.PlaceVersion) then
-
-    SendUserNotice:Fire(string.format('Version Mismatch: \n\nAncestor: V%s \nLumber Tycoon 2: V%s.', Ancestor.LatestSupportedVersion, tostring(game.PlaceVersion)))
-
-end
 
 if not isfile('AncestorSlotNames.cfg') then
 
@@ -6676,4 +6669,4 @@ Maid.Threads:Create(function()
 
 end)
 
-SendUserNotice:Fire('Ancestor Is In Beta And Nowhere Near Completion. Other GUI\'s Are Awful So I Released Early. \n\nTOADS Is Good Though, You Can Execute That From Settings.')
+SendUserNotice:Fire('This is a public release of Ancestor, There is bugs and it most likely wont recieve updates.')
