@@ -6507,7 +6507,6 @@ end, true, true, 'Executes Butter GUI.')
 
 local GUIInfo = SettingsSection:CreateSubSection('GUI Information')
 
-GUIInfo:CreateLabel(string.format('GUI Version: V%s', Ancestor.LatestSupportedVersion))
 GUIInfo:CreateLabel(string.format('Game Version: V%s', tostring(game.PlaceVersion)))
 GUIInfo:CreateLabel(string.format('Executor: %s', tostring(Executor)))
 
