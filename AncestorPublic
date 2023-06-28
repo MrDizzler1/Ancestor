@@ -6490,7 +6490,7 @@ local SettingsMain = AncestorUI:CreateTab(5182003557, 'Settings')
 local SettingsSection = SettingsMain:CreateSection()
 local Credits = SettingsSection:CreateSubSection('Credits')
 Credits:CreateLabel('Developed By FindFirstAncestorツ')
-Credits:CreateLabel('Tested And Other Help From MrDrizzler & Silent')
+Credits:CreateLabel('MrDizzler is my sugar daddy <3')
 
 local Toads = SettingsSection:CreateSubSection('Other GUIs')
 Toads:CreateButton('Execute Toads GUI', function()
