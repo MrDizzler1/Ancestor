@@ -6669,4 +6669,4 @@ Maid.Threads:Create(function()
 
 end)
 
-SendUserNotice:Fire('This is a public release of Ancestor, There is bugs and it most likely wont recieve updates.')
+SendUserNotice:Fire('This is a public release of Ancestor, There is bugs and it most likely wont recieve updates')
