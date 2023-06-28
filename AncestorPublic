@@ -4524,86 +4524,6 @@ function Ancestor:DuplicateProperty()
 
 end
 
-function Ancestor:DupeInventory()
-
-    local Amount = 0
-
-    if self.BringingTree then 
-
-        return SendUserNotice:Fire('You Cannot Use This Feature While Using Bring Tree.')
-
-    end
-
-    if self.Autobuying then 
-
-        return SendUserNotice:Fire('You Cannot Use This Feature While Using Autobuy.')
-
-    end
-
-    if self.DupingInventory then 
-
-        return SendUserNotice:Fire('You\'re Already Using This Feature!')
-
-    end
-
-    for i = 1, self.InventoryDuplicationAmount do
-
-        if self.CurrentlySavingOrLoading then
-
-            break
-            
-        end
-
-        self.DupingInventory = true
-        local Axes, Slot = self:GetAxes(), self:GetLoadedSlot()
-
-        if Slot <= 0 then 
-
-            return SendUserNotice:Fire('You Must Have A Slot Loaded For This Feature To Work.')
-
-        end
-
-        local DataSize = self:GetPlayersSlotInfo(Player)[Slot]
-
-        self:CanClientLoad() 
-
-        local BackpackAxes = Player.Backpack:GetChildren()
-
-        if #Axes == 0 then 
-
-            return SendUserNotice:Fire('This Feature Requires Your Axes To Be In Your Backpack.')
-
-        end
-
-        Maid.Threads:Create(function()
-        
-            Player.Character.Head:Destroy()
-
-        end)
-
-        repeat Maid.Timer:Wait() until not Player.Character:FindFirstChild('Head')
-
-        Maid.Timer:Wait(3.2)
-
-        self:LoadSlot(Slot)
-
-        self.DupingInventory = false
-        Amount += 1
-
-        SendUserNotice:Fire(string.format('Duplicated Inventory %s Times.', tostring(Amount)))
-
-    end
-
-    if GUISettings.DropToolsAfterInventoryDuplication then 
-
-        Player.Character.Humanoid.Health = 0   
-
-    end
-
-    SendUserNotice:Fire('Inventory Duplication Completed.')
-
-end
-
 function Ancestor:GetFlySpeed()
 
     local Ancestor = CoreGui:FindFirstChild('Ancestor')
@@ -6404,26 +6324,6 @@ ToolDroppingOptions:CreateButton('Drop All Axes', function()
     Ancestor:DropTools()
 
 end, true, true, 'Drops All Your Axes.')
-
-local DupeInventory = AxeSection:CreateSubSection('Inventory Duplication')
-
-DupeInventory:CreateSlider('Quantity', function(Quantity)
-
-    Ancestor.InventoryDuplicationAmount = Quantity
-    
-end, 1, 10, 1, false, nil, false)
-
-DupeInventory:CreateToggle('Drop All Axes After Duplication.', false, function(State)
-
-    GUISettings.DropToolsAfterInventoryDuplication = State
-
-end, GUISettings.DropToolsAfterInventoryDuplication, true, 'Kills Player.Character To Drop All Axes At Your Current Position.')
-
-DupeInventory:CreateButton('Dupe Inventory On Current Slot', function()
-
-    Ancestor:DupeInventory()
-
-end, true, true, 'Duplicates Your Inventory (Requires Reload So May Be Slow).')
 
 local AxeInformation = AxeSection:CreateSubSection('Current Axe Information')
 AxeNameLabel = AxeInformation:CreateLabel('Current Axe Not Found')
