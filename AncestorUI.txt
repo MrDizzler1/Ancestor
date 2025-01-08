@@ -1,5 +1,9 @@
 local Library={};
 local HelpSections={}
+
+getgenv().PlayerDropType='Both'
+
+function Library:Initiate()
 local players = game:GetService('Players')
 local player = players.LocalPlayer
 local playerGui = player.PlayerGui
@@ -8,9 +12,7 @@ local coreUI = playerGui:WaitForChild('Ancestor', 5)
     
 local scale = function() coreUI.Scaler.Scale = math.min(camera.ViewportSize.X / 1280, camera.ViewportSize.Y / 1080) end
 camera:GetPropertyChangedSignal("ViewportSize"):Connect(scale) scale()
-getgenv().PlayerDropType='Both'
 
-function Library:Initiate()
     CurrentTab=nil
     if game.CoreGui:FindFirstChild'Ancestor'then 
         game.CoreGui.Ancestor:Destroy();
