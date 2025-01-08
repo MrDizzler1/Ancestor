@@ -47,9 +47,9 @@ function Library:Initiate()
     Ancestor.Parent = game.CoreGui
     Ancestor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
-    Scaler.Parent = "Ancestor"
     Scaler.Name = "Scaler"
-    
+    Scaler.Parent = "Ancestor"
+
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Ancestor
     MainFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
