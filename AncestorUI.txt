@@ -9,7 +9,7 @@ function Library:Initiate()
     local AncestorFunctions={};
     local TweenService=game:GetService'TweenService';
     local Ancestor = Instance.new("ScreenGui")
-    local Scaler = Instance.new("UIscale")
+    local Scaler = Instance.new("UIScale")
     local MainFrame = Instance.new("Frame")
     local Categories = Instance.new("Frame")
     local ScrollingFrame = Instance.new("ScrollingFrame")
