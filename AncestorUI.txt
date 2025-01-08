@@ -1683,10 +1683,10 @@ function Library:Initiate()
 	local Padding = Instance.new("UIPadding")
 
 	Padding.Parent = ImageButton_2
-	Padding.PaddingBottom = UDim2.new(0, 10)
-	Padding.PaddingLeft = UDim2.new(0, 10)
-	Padding.PaddingRight = UDim2.new(0, 10)
-	Padding.PaddingTop = UDim2.new(0, 10)
+	Padding.PaddingBottom = UDim.new(0, 10)
+	Padding.PaddingLeft = UDim.new(0, 10)
+	Padding.PaddingRight = UDim.new(0, 10)
+	Padding.PaddingTop = UDim.new(0, 10)
 	ImageButton_2.Parent = Categories
 	ImageButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ImageButton_2.BackgroundTransparency = 1.000
