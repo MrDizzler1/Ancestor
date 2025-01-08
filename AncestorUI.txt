@@ -324,15 +324,15 @@ function Library:Initiate()
         TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         TextButton.BackgroundTransparency = 1.000
         TextButton.BorderSizePixel = 0
-        TextButton.Position = UDim2.new(0.220000003, 0, 0.2, 0)
-        TextButton.Size = UDim2.new(0.800000012, 0, 0.9, 0)
+        TextButton.Position = UDim2.new(0, 0, 0, 0)
+        TextButton.Size = UDim2.new(1, 0, 1, 0)
         TextButton.AutoButtonColor = false
         TextButton.Font = Enum.Font.GothamBold
         TextButton.Text = Name
         TextButton.TextColor3 = (CategoryAmount==1 and Color3.fromRGB(0,122,255))or Color3.fromRGB(255, 255, 255)
         TextButton.TextSize = 20
         TextButton.ClipsDescendants=true;
-        TextButton.TextXAlignment = Enum.TextXAlignment.Left
+        TextButton.TextXAlignment = Enum.TextXAlignment.Center
         local function func()
             for i,v in next,ScrollingFrame:GetChildren()do 
                 if v:IsA'Frame'and v~=Frame and v:FindFirstChild'TextButton'and v:FindFirstChild'ImageButton'then 
