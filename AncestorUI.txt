@@ -14,14 +14,14 @@ function Library:Initiate()
     local Categories = Instance.new("Frame")
     local ScrollingFrame = Instance.new("ScrollingFrame")
     local UIListLayout = Instance.new("UIListLayout")
-
+    
     local ImageButton_2 = Instance.new("ImageButton")
     local TextBox = Instance.new("TextBox")
     local UICorner = Instance.new("UICorner")
     local UICorner_2 = Instance.new("UICorner")
-
-
-
+    
+    
+    
     local Slider = Instance.new("Frame")
     local UICorner_4 = Instance.new("UICorner")
     local Title_2 = Instance.new("TextLabel")
@@ -33,21 +33,22 @@ function Library:Initiate()
     local UICorner_6 = Instance.new("UICorner")
     local Background = Instance.new("TextButton")
     local UICorner_7 = Instance.new("UICorner")
-
+    
     local UICorner_10 = Instance.new("UICorner")
-
-
-
+    
+    
+    
     local UICorner_17 = Instance.new("UICorner")
     local Categories_2 = Instance.new("Frame")
-
+    
     --Properties:
-
+    
     Ancestor.Name = "Ancestor"
     Ancestor.Parent = game.CoreGui
     Ancestor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    Scaler.Parent = "Ancestor"
     Scaler.Name = "Scaler"
-    Scaler.parent = "Ancestor"
     
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Ancestor
