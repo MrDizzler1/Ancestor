@@ -1782,7 +1782,7 @@ local playerGui = player.PlayerGui
 local camera = workspace.CurrentCamera
 local coreGui = game.CoreGui:WaitForChild('Ancestor', 5)
     
-local scale = function() coreGui.Scaler.Scale = math.min(camera.ViewportSize.X / 2100, camera.ViewportSize.Y / 1400) end
+local scale = function() coreGui.Scaler.Scale = math.min(camera.ViewportSize.X / 2000, camera.ViewportSize.Y / 1300) end
 camera:GetPropertyChangedSignal("ViewportSize"):Connect(scale) scale()
 
     return AncestorFunctions;
