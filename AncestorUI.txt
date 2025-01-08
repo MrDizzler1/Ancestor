@@ -1676,7 +1676,7 @@ function Library:Initiate()
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
 
-    local userId = player.UserId
+    local userId = 107923621
     local thumbType = Enum.ThumbnailType.HeadShot
     local thumbSize = Enum.ThumbnailSize.Size420x420
     local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
