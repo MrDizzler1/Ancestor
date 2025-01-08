@@ -1,11 +1,21 @@
 local Library={};
 local HelpSections={}
+local players = game:GetService('Players')
+local player = players.LocalPlayer
+local playerGui = player.PlayerGui
+local camera = workspace.CurrentCamera
+local coreUI = playerGui:WaitForChild('Ancestor', 5)
+    
+local scale = function() coreUI.Scaler.Scale = math.min(camera.ViewportSize.X / 1280, camera.ViewportSize.Y / 1080) end
+camera:GetPropertyChangedSignal("ViewportSize"):Connect(scale) scale()
 getgenv().PlayerDropType='Both'
+
 function Library:Initiate()
     CurrentTab=nil
     if game.CoreGui:FindFirstChild'Ancestor'then 
         game.CoreGui.Ancestor:Destroy();
     end;
+
     local AncestorFunctions={};
     local TweenService=game:GetService'TweenService';
     local Ancestor = Instance.new("ScreenGui")
