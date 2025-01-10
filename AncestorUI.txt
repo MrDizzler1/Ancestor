@@ -1679,7 +1679,7 @@ function Library:Initiate()
     ImageButton_2.Position = UDim2.new(0, 0, 0,-10)
     ImageButton_2.Size = UDim2.new(1, 0, 0.35, 0)
     ImageButton_2.AutoButtonColor = false
-    ImageButton_2.Image = "rbxassetid://12752031602"
+    ImageButton_2.Image = "rbxassetid://8763218316"
     ImageButton_2.ImageColor3 = Color3.fromRGB(0, 122, 255)
     ImageButton_2.Active = false
 
@@ -1776,14 +1776,14 @@ function Library:Initiate()
     UICorner_2.Parent = Categories
     UICorner_2.CornerRadius=UDim.new(0,6)
 
-local players = game:GetService('Players')
-local player = players.LocalPlayer
-local playerGui = player.PlayerGui
-local camera = workspace.CurrentCamera
-local coreGui = game.CoreGui:WaitForChild('Ancestor', 5)
-    
-local scale = function() coreGui.Scaler.Scale = math.min(camera.ViewportSize.X / 1980, camera.ViewportSize.Y / 1200) end
-camera:GetPropertyChangedSignal("ViewportSize"):Connect(scale) scale()
+    local players = game:GetService('Players')
+    local player = players.LocalPlayer
+    local playerGui = player.PlayerGui
+    local camera = workspace.CurrentCamera
+    local coreGui = game.CoreGui:WaitForChild('Ancestor', 5)
+        
+    local scale = function() coreGui.Scaler.Scale = math.min(camera.ViewportSize.X / 1980, camera.ViewportSize.Y / 1200) end
+    camera:GetPropertyChangedSignal("ViewportSize"):Connect(scale) scale()
 
     return AncestorFunctions;
 end;
