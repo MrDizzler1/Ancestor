@@ -39,12 +39,12 @@ local SettingsT = {
 }
 
 local themes = {
-    Background = (SettingsT.Background),
-    Glow = (SettingsT.Glow),
-    Accent = (SettingsT.Accent),
-    LightContrast = (SettingsT.LightContrast),
-    DarkContrast = (SettingsT.DarkContrast),  
-    TextColor = (SettingsT.TextColor)
+    Background = stringtocolor(SettingsT.Background),
+    Glow = stringtocolor(SettingsT.Glow),
+    Accent = stringtocolor(SettingsT.Accent),
+    LightContrast = stringtocolor(SettingsT.LightContrast),
+    DarkContrast = stringtocolor(SettingsT.DarkContrast),  
+    TextColor = stringtocolor(SettingsT.TextColor)
 }
 
 do
