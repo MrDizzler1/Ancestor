@@ -11,15 +11,31 @@ local tweeninfo = TweenInfo.new
 -- additional
 local utility = {}
 
+-- Helper function to convert "R, G, B" strings into Color3 objects
+local function stringtocolor(string)
+    local r, g, b = string:match("(%d+),%s*(%d+),%s*(%d+)")
+    return Color3.fromRGB(tonumber(r), tonumber(g), tonumber(b))
+end
+
+-- Configuration table for the UI theme
+local SettingsT = {
+    Background = "25, 25, 25",
+    Glow = "255, 255, 255",
+    Accent = "0, 150, 255",
+    LightContrast = "40, 40, 40",
+    DarkContrast = "20, 20, 20",
+    TextColor = "255, 255, 255"
+}
+
 -- themes
 local objects = {}
 local SettingsT = {
-    Background = Color3.FromRGB("25, 25, 25"),    -- Dark grey background
-    Glow = Color3.FromRGB("255, 255, 255"),      -- White glow
-    Accent = Color3.FromRGB("0, 150, 255"),      -- Blue accent
-    LightContrast = Color3.FromRGB("40, 40, 40"),
-    DarkContrast = Color3.FromRGB("20, 20, 20"),
-    TextColor = Color3.FromRGB("255, 255, 255)"
+    Background = "25, 25, 25",    -- Dark grey background
+    Glow = "255, 255, 255",      -- White glow
+    Accent = "0, 150, 255",      -- Blue accent
+    LightContrast = "40, 40, 40",
+    DarkContrast = "20, 20, 20",
+    TextColor = "255, 255, 255"
 }
 
 local themes = {
